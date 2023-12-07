@@ -1,0 +1,81 @@
+.section {
+    position: fixed;
+    top: 0;
+    z-index: 10001;
+    width: 100%;
+    background-color: #000000d7;
+}
+
+.aside {
+    width: 85%;
+    max-width: 40rem;
+    height: 100vh;
+    background-color: var(--light-1);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.head {
+    padding: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.head .logo img {
+    width: 13rem;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3.5rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--light-1);
+}
+
+.aside > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.aside > ul > li.active {
+    color: var(--blue-1);
+}
+
+.aside ul > li .border {
+    background-color: transparent;
+    width: 0.8rem;
+    height: 4rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.aside ul > li.active .border {
+    background-color: var(--blue-1);
+}
+
+.aside > ul li > a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+span.hr{
+    width: 85%;
+    height: 1px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.137);
+    margin: 0 auto;
+}

@@ -1,0 +1,41 @@
+.section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 50rem;
+}
+
+.section > a {
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section > a:nth-of-type(2) {
+    background-image: url("/image/Onboarding-Kids-DT-030823.jpeg");
+}
+
+.section > a:nth-of-type(3) {
+    background-image: url("/image/Onboarding-Men-DT-030823.jpeg");
+}
+
+.section > a:nth-of-type(1) {
+    background-image: url("/image/Onboarding-Women-DT-030823.jpeg");
+}
+
+.section > a button {
+    background-color: var(--light-2);
+    padding: 0.5rem 3rem;
+    border-radius: 0.2rem;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 45rem) {
+    .section {
+        grid-template-columns: 1fr;
+        height: 170rem;
+    }
+}

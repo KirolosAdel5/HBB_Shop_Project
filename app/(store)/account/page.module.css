@@ -1,0 +1,54 @@
+.section {
+    padding: 1.5rem;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid var(--dark-4);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.part1 p span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-3);
+}
+
+.part2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.part2 > a {
+    border: 1px solid var(--dark-4);
+    padding: 2rem;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.part2 > a:hover {
+    background-color: var(--dark-4);
+}
+.part2 > a .icon {
+    font-size: 3rem;
+    color: var(--dark-3);
+}
+
+.part2 > a .text > p:nth-of-type(2) {
+    font-size: 1.5rem;
+    color: var(--dark-3);
+}
+
+@media (max-width:50rem) {
+    .part2 {
+        grid-template-columns: 1fr;
+    }
+}

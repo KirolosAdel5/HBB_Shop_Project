@@ -1,0 +1,66 @@
+.section > div > p {
+    color: var(--dark-3);
+    font-size: 1.5rem;
+  }
+  
+  
+  .details a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(2, 7, 162); 
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    background: #ff5555;
+  }
+  .details a:hover {
+    background-color: rgb(255, 0, 0); 
+  }
+  
+  
+  .details a:active {
+    background-color: rgb(255, 0, 0); 
+  }
+  
+  .card {
+    margin: 16px;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #cccccc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 300px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .details {
+    text-align: center;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  .price {
+    font-size: 3rem;
+    color: #888;
+  }

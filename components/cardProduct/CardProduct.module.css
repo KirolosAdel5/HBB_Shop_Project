@@ -1,0 +1,53 @@
+.card {
+    position: relative;
+    max-width: 25rem;
+    font-size: 1.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card > p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.addToFav {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(175, 175, 175, 0.753);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.colors {
+    display: flex;
+    align-items: center;
+}
+
+.colors span {
+    margin-left: -0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(42, 141, 29);
+    border: 1px solid var(--light-1);
+    border-radius: 50%;
+}
+
+
+.colors p{
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    color:var(--dark-3) ;
+}
+
+.addToFavColor {
+    color: #3f47a9;
+}

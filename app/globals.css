@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-1: #000000;
+    --dark-2: #00000039;
+    --dark-3: #5d5e5c;
+    --dark-4:#ECEDEB;
+    --light-1: #ffffff;
+    --light-2: #f7f8f7;
+    --red-1: rgb(247, 75, 75);
+    --blue-1: #2b34a0;
+    --shadow-1: rgba(0, 0, 0, 0.075) 0px 1px 3px,
+        rgba(0, 0, 0, 0.137) 0px 1px 2px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--light-1);
+    direction: rtl;
+    color: #181818;
+    background-color: var(--light-2);
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.mainContainer {
+    max-width: 140rem;
+    margin: auto;
+}
+
+@media (max-width: 60rem) {
+    html {
+        font-size: 50%;
+    }
+}

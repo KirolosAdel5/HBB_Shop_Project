@@ -1,0 +1,96 @@
+.btn{
+    outline: none;
+    border: 1px solid var(--blue-1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--blue-1);
+    color: white;
+    width: 100%;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+.container {
+    position: relative;
+  }
+  
+  .popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Increased z-index to appear above other elements */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 999; /* Set z-index just below the popup */
+  }
+  
+  .popup {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 400px; /* Adjust the width as needed */
+    z-index: 1001; /* Higher z-index to appear above the overlay */
+    border-radius: 3%;
+  }
+  
+  .colors li:hover {
+    background-color: rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+  }
+  
+  .size li:hover {
+    color: #ffeeee;
+    background-color: rgb(21, 20, 26);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  
+  .size ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.size ul li {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--dark-3);
+    background-color: var(--light-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colors {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.colors ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.colors ul li {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(255, 99, 99);
+}
+

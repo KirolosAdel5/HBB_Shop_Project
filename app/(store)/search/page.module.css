@@ -1,0 +1,105 @@
+/* page.module.css */
+.part1 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  background-color: var(--color-light-1);
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.divH1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+    color: #000000;
+  }
+  
+  .divH2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .textH3 {
+    font-size: 12px;
+    overflow: hidden;
+    font-weight: bold;
+    width: 150px;
+    height: 20px;
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .resultpage {
+    margin: 30px;
+    text-align: start;
+  }
+  
+  .BACK1 {
+    margin: 25px;
+    border: #ccc;
+    text-align: start;
+  }
+  
+  .button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .addToCart {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: 1px solid #0000004b;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .card {
+    overflow: hidden;
+    text-align: center;
+    margin: 15px;
+    height: 50vh;
+    width: 30vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .categoriesButton {
+    margin: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+
+  .notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    height: 50vh;
+    color: var(--dark-3);
+    font-size: 1.8rem;
+    max-width: 40vh;
+    margin: auto;
+    text-align: center;
+}

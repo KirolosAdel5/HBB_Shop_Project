@@ -1,0 +1,51 @@
+.section {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.section > p {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.subCategory {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.subCategory > div {
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--dark-1);
+}
+
+.subCategory >div a {
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--dark-4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-1);
+}
+
+.subCategory >div a img {
+    width: 85%;
+}
+
+/* -------- */
+
+.ads img{
+width: 100%;
+border-radius: 1rem;
+}

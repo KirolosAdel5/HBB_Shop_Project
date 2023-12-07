@@ -1,0 +1,28 @@
+.subCategory{
+    background-color: var(--light-1);
+}
+
+.subCategory ul li{
+    cursor: pointer;
+    padding: 1.5rem 0.5rem;
+}
+
+.section{
+    padding: 0 1rem;
+}
+
+.part2 {
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 40rem) {
+    .part2{
+    grid-template-columns: 1fr;
+    }
+    .filterDiv{
+        display: none;
+    }
+}

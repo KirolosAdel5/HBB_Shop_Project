@@ -1,0 +1,158 @@
+.nav {
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    background-color: var(--light-2);
+    position: relative;
+    border-bottom: 1px solid var(--dark-4);
+}
+
+.logo{
+    padding: 1rem;
+}
+
+.logo img {
+    width: 10rem;
+}
+
+
+.nav > div:nth-of-type(2) ul li a{
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+}
+
+
+.nav > div:nth-of-type(3),
+.divSearch {
+    width: 80%;
+    max-width: 35rem;
+    background-color: var(--light-1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--dark-4);
+}
+
+.divSearch {
+    font-size: 1.7rem;
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    width: 97%;
+    max-width: none;
+}
+
+.nav > div:nth-of-type(3) input,
+.divSearch input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.nav > div:nth-of-type(4) {
+    position: absolute;
+    left: 2rem;
+}
+
+.nav > div:nth-of-type(4) > span {
+    width: 1px;
+    height: 2rem;
+    background-color: var(--dark-2);
+}
+
+.numInCard > :nth-child(1) {
+    font-size: 2.5rem;
+    color: var(--dark-2);
+}
+
+.numInCard span {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--red-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-1);
+}
+
+.subCategory {
+    padding: 0 1rem;
+}
+
+.subCategory ul li {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* -------------- */
+
+.smallNav {
+    font-size: 1.5rem;
+    background-color: var(--light-1);
+}
+
+.smallNav > div:nth-of-type(1) {
+    padding:0 2rem;
+}
+
+.smallNav > div:nth-of-type(1) > div {
+    cursor: pointer;
+}
+
+.smallNav > div:nth-of-type(1) > div:nth-of-type(3) {
+    font-size: 2rem;
+    position: relative;
+}
+
+.smallNav > div:nth-of-type(2) ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-2);
+    padding: 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: 1px solid var(--light-1);
+}
+
+.smallNav > div:nth-of-type(2) ul li:hover {
+    border-top: 2px solid var(--blue-1);
+}
+
+/* --------------- */
+
+.pop {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1111;
+    background-color: var(--light-1);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-dark-2);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: hidden;
+}
+
+.pop ul {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.pop ul li a,
+.pop ul li button {
+    display: inline-block;
+padding:  1rem;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.pop ul li:hover {
+    background-color: rgba(59, 127, 252, 0.76);
+}

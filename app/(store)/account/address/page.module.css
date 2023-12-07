@@ -1,0 +1,116 @@
+.section Pi1{
+  margin-right: 25vh;
+  background-size: 40vh;
+  size: 90vh;
+  color: #ffffff;
+  background-color: #1c13d0;
+  height: 350vh;
+  border-radius: 25px;
+  width: 350vh;
+  padding: 0.9rem 9rem;
+}
+
+.notfound {
+  text-align: center;
+  display: contents;
+  gap: 4rem;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  color: var(--dark-3);
+}
+
+.section a {
+ color: #ffffff;
+  margin-right: 10vh;
+  background-color: #1c13d0;
+  border-radius: 25px;
+  padding: 0.9rem 20.0rem;
+}
+.section1 {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  margin: 8vh;
+  width: auto;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.cardHeader {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: auto;
+}
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.deleteButton {
+  padding: 6px 12px;
+  color: #1c13d0;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ffffff; 
+}
+.editButton {
+  padding: 6px 12px;
+  color: #1c13d0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cardBody {
+  margin-bottom: 10px;
+}
+.address,
+.phone {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.cardBody .address,
+.phone {
+  text-align: start;
+}
+.confirmButton {
+  padding: 8px 16px;
+  color: #1c13d0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.deleteButton:hover {
+  background-color: #d01313;
+  color: #ffffff;
+}
+.editButton:hover {
+  background-color: #13d0c0;
+  color: #ffffff;
+}
+.confirmButton:hover {
+  background-color: #0d00ff;
+  color: #ffffff;
+}
+
+
+
+.notfound a {
+  background-color: var(--blue-1);
+  color: var(--light-1);
+  padding: 0.5rem 3rem;
+}
+
+.defaultCard {
+  background-color:#f3865b;
+  color: white; 
+}

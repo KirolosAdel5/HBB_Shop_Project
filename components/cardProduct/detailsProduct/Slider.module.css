@@ -1,0 +1,30 @@
+.slider1 > div,
+.slider2 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider1 > div img {
+    width: 75%;
+    max-width: 35rem;
+    margin-bottom: 2rem;
+}
+
+.slider2 > div {
+    height: 20rem;
+    width: fit-content;
+    border: 1px solid var(--color-dark-2);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.slider2 > div img {
+    height: 75%;
+    transition: 0.15s;
+}
+
+.slider2 > div:hover img {
+    height: 85%;
+}
