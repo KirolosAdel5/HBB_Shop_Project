@@ -227,7 +227,9 @@ const MainNav = (props) => {
                         className={` relative ${classes.numInCard}`}
                     >
                         <PiShoppingBagFill />
-                        <span className="absolute bottom-6 right-6">5</span>
+                        <span className="absolute bottom-6 right-6">
+                        {cart.total_quantity}
+                        </span>
                     </Link>
                 </div>
                 <div>
