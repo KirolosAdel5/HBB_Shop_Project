@@ -46,7 +46,7 @@ const Register = () => {
         try {
             // Make a POST request to the Django API for registration
             const response = await axios.post(
-                'http://127.0.0.1:8000/api/register/', 
+                'https://kirolosadel5.pythonanywhere.com/api/register/', 
                 {
                     ...form,
                     phone_number: combinedValue, // Update phone_number

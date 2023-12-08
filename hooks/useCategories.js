@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 const fetchCategories = async () => {
-  const response = await axios.get('http://localhost:8000/api/categories/men/');
+  const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/categories/men/');
   return response.data.children;
 };
 

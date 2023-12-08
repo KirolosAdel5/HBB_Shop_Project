@@ -20,7 +20,7 @@ const ButtonAddToCart = (props) => {
               // Define the headers object    
   
               // Make the API call with the headers
-              const response = await axios.get(`http://localhost:8000/api/products/${productId}/`);
+              const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/${productId}/`);
   
               setProductData(response.data);
             } catch (error) {
@@ -70,7 +70,7 @@ const ButtonAddToCart = (props) => {
       }
       if (authToken){
         const response = await axios.post(
-          `http://localhost:8000/api/carts/${cartId}/items/`,
+          `https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/items/`,
           {
             product_id: productId,
             color: selectedColor,

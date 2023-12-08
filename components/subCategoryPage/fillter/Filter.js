@@ -21,7 +21,7 @@ const Filter = ({ onFilter }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/products/brands/`);
+                const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/brands/`);
                 setBrands(response.data);
             } catch (error) {
                 console.error("Error fetching product data:", error.message);
@@ -67,7 +67,7 @@ const Filter = ({ onFilter }) => {
     // -------------------------
     const handleConfirmationClick = () => {
         // // Make API call with selected filters and the categoryName from the URL
-        // const apiUrl = `http://localhost:8000/api/products/?category=${categoryName}&brand=${selectedBrand}&price_min=${priceFrom}&price_max=${priceTo}`;
+        // const apiUrl = `https://kirolosadel5.pythonanywhere.com/api/products/?category=${categoryName}&brand=${selectedBrand}&price_min=${priceFrom}&price_max=${priceTo}`;
 
         // axios.get(apiUrl)
         //     .then((response) => {

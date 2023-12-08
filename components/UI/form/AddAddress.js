@@ -41,7 +41,7 @@ const AddAddress = () => {
     try {
       // Make a POST request to your API endpoint with form data and auth token
       const response = await axios.post(
-        "http://localhost:8000/api/addresses/",
+        "https://kirolosadel5.pythonanywhere.com/api/addresses/",
         formData,
         {
           headers: {

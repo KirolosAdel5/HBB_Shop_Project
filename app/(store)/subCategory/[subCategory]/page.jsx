@@ -21,11 +21,11 @@ const page = ({params}) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/categories/${params.subCategory}/`);
+          const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/${params.subCategory}/`);
           setcategoryName(response.data.name);
           setSubCategories(response.data.children);
 
-          const response2 = await axios.get(`http://localhost:8000/api/categories/${params.subCategory}/retrieve_category_items/?page=${currentPage}`);
+          const response2 = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/${params.subCategory}/retrieve_category_items/?page=${currentPage}`);
           setCategoryProducts(response2.data.results);
           setPaginationData({
             count: response2.data.count,
@@ -54,7 +54,7 @@ const page = ({params}) => {
         const brandParam = selectedBrand ? `&brand=${selectedBrand}` : '';
 
         // Make API call with selected filters and the categoryName from the URL
-        const apiUrl = `http://localhost:8000/api/products/?category=${params.subCategory}${brandParam}&price_min=${priceFrom}&price_max=${priceTo}`;
+        const apiUrl = `https://kirolosadel5.pythonanywhere.com/api/products/?category=${params.subCategory}${brandParam}&price_min=${priceFrom}&price_max=${priceTo}`;
     
     
         axios.get(apiUrl)
@@ -70,7 +70,7 @@ const page = ({params}) => {
 
     const handleOrderChange = (event) => {
         const newOrder = event.target.value;
-        const apiUrl = `http://localhost:8000/api/categories/hbbwomen-clothing/retrieve_category_items/?sort=regular_price&order=${newOrder}`;
+        const apiUrl = `https://kirolosadel5.pythonanywhere.com/api/categories/hbbwomen-clothing/retrieve_category_items/?sort=regular_price&order=${newOrder}`;
 
         axios.get(apiUrl)
             .then((response) => {
@@ -89,7 +89,7 @@ const page = ({params}) => {
         `/subCategory/${params.subCategory}?page=${page}`
     )
     
-    const apiUrl = `http://localhost:8000/api/categories/hbbwomen-clothing/retrieve_category_items/?page=${page}`;
+    const apiUrl = `https://kirolosadel5.pythonanywhere.com/api/categories/hbbwomen-clothing/retrieve_category_items/?page=${page}`;
     
     axios.get(apiUrl)
         .then((response) => {

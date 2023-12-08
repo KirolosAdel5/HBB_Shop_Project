@@ -25,7 +25,7 @@ const Aside = (props) => {
                         'Authorization': 'Bearer '+authToken,
                     };
                     
-                    const response = await axios.post("http://127.0.0.1:8000/api/logout/", {}, { headers });
+                    const response = await axios.post("https://kirolosadel5.pythonanywhere.com/api/logout/", {}, { headers });
             
                     if (response.status === 200) {
                         removeCookie('authToken'); // Replace 'authToken' with the actual cookie name

@@ -17,7 +17,7 @@ const page = () => {
     const router = useRouter();
       const fetchCartData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/carts/${cartId}/`);
+          const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/`);
           setCartData(response.data);
         } catch (error) {
           console.error('Error fetching cart data:', error);
@@ -49,7 +49,7 @@ const page = () => {
     const handleQuantityChange = async (itemId, newQuantity) => {
         try {
           // Make a PATCH request to update the quantity
-          await axios.patch(`http://localhost:8000/api/carts/${cartData.id}/items/${itemId}/`, {
+          await axios.patch(`https://kirolosadel5.pythonanywhere.com/api/carts/${cartData.id}/items/${itemId}/`, {
             quantity: newQuantity,
           });
       
@@ -67,7 +67,7 @@ const page = () => {
         try {
               // Make the API call to delete the address
               const response = await axios.delete(
-                `http://localhost:8000/api/carts/${cartId}/items/${addressId}/`,
+                `https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/items/${addressId}/`,
                 {
                   headers: {
                     Authorization: `Bearer ${cookies.authToken}`,
@@ -102,7 +102,7 @@ const page = () => {
                   try {
                     // Fetch the addresses
                     const addressesResponse = await axios.get(
-                      'http://localhost:8000/api/addresses/',
+                      'https://kirolosadel5.pythonanywhere.com/api/addresses/',
                       {
                         headers: {
                           Authorization: `Bearer ${cookies.authToken}`,
@@ -125,7 +125,7 @@ const page = () => {
                 
                     // Make the API call to create the order using the default address
                     const response = await axios.post(
-                      'http://localhost:8000/api/orders/',
+                      'https://kirolosadel5.pythonanywhere.com/api/orders/',
                       {
                         cart_id: cartId,
                         address_id: defaultAddress.id,

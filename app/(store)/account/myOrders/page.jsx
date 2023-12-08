@@ -21,7 +21,7 @@ const page = () => {
       const fetchData = async () => {
         try {
         if (authToken){
-            const response = await axios.get('http://localhost:8000/api/orders/'
+            const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/orders/'
             , {
                 headers: {
                     Authorization: `Bearer ${authToken}`,

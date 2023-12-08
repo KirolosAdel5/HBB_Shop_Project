@@ -37,7 +37,7 @@ const MainNav = (props) => {
                         'Authorization': 'Bearer '+authToken,
                     };
                     
-                    const response = await axios.post("http://127.0.0.1:8000/api/logout/", {}, { headers });
+                    const response = await axios.post("https://kirolosadel5.pythonanywhere.com/api/logout/", {}, { headers });
             
                     if (response.status === 200) {
                         removeCookie('authToken'); // Replace 'authToken' with the actual cookie name
@@ -60,7 +60,7 @@ const MainNav = (props) => {
                       setSearchTerm(q);
                     }
                   try {
-                    const response = await axios.get('http://localhost:8000/api/users/me/', {
+                    const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/users/me/', {
                       headers: {
                         Authorization: `Bearer ${cookies.authToken}`,
                       },
@@ -76,7 +76,7 @@ const MainNav = (props) => {
                 const fetchCart = async () => {
                     try {
                       const response = await axios.post(
-                        "http://localhost:8000/api/carts/",
+                        "https://kirolosadel5.pythonanywhere.com/api/carts/",
                         {},
                         {
                           headers: {

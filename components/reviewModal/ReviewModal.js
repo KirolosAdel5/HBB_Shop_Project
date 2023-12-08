@@ -42,7 +42,7 @@ const ReviewModal = ({ isOpen, onClose ,product_slug,category_slug}) => {
       
       if (authToken){
         const response = await axios.post(
-          `http://localhost:8000/api/products/${product_slug}/review/`,
+          `https://kirolosadel5.pythonanywhere.com/api/products/${product_slug}/review/`,
           {
             rating: rating,
             comment: reviewText,

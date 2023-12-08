@@ -13,11 +13,11 @@ const Footer = () => {
     
     const fetchData = async () => {
       try {
-        const menCategories = await axios.get(`http://localhost:8000/api/categories/men/`);
+        const menCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/men/`);
         setMenCategories(menCategories.data.children);
-        const womenCategories = await axios.get(`http://localhost:8000/api/categories/women/`);
+        const womenCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/women/`);
         setWomenCategories(womenCategories.data.children);
-        const kidsCategories = await axios.get(`http://localhost:8000/api/categories/kids/`);
+        const kidsCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/kids/`);
         setKidsCategories(kidsCategories.data.children);
 
       } catch (error) {

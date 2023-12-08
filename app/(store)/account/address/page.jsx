@@ -15,7 +15,7 @@ const Page = () => {
   const router = useRouter(); // Initialize the useRouter hook
 const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/addresses/", {
+        const response = await fetch("https://kirolosadel5.pythonanywhere.com/api/addresses/", {
           headers: {
             Authorization: `Bearer ${cookies.authToken}`,
           },
@@ -56,7 +56,7 @@ const fetchData = async () => {
     try {
           // Make the API call to delete the address
           const response = await axios.delete(
-            `http://localhost:8000/api/addresses/${addressId}/`,
+            `https://kirolosadel5.pythonanywhere.com/api/addresses/${addressId}/`,
             {
               headers: {
                 Authorization: `Bearer ${cookies.authToken}`,
@@ -77,7 +77,7 @@ const fetchData = async () => {
     try {
       // Make the API call to set the address as default
       const response = await axios.patch(
-        `http://localhost:8000/api/addresses/${addressId}/set_default/`,
+        `https://kirolosadel5.pythonanywhere.com/api/addresses/${addressId}/set_default/`,
         {},
         {
           headers: {

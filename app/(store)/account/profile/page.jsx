@@ -23,7 +23,7 @@ const page = () => {
           }
     
           try {
-            const response = await axios.get('http://localhost:8000/api/users/me/', {
+            const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/users/me/', {
               headers: {
                 Authorization: `Bearer ${cookies.authToken}`,
               },

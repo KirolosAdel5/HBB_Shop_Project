@@ -27,7 +27,7 @@ const CardProduct = ({ productId }) => {
               }
   
               // Make the API call with the headers
-              const response = await axios.get(`http://localhost:8000/api/products/${productId}/`, {
+              const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/${productId}/`, {
                   headers: headers,
               });
   
@@ -62,7 +62,7 @@ const CardProduct = ({ productId }) => {
             }
 
             // Make the API call to add the product to the wishlist
-            const response = await axios.post(`http://localhost:8000/api/wishlist/add_to_wishlist/${productId}/`, null, {
+            const response = await axios.post(`https://kirolosadel5.pythonanywhere.com/api/wishlist/add_to_wishlist/${productId}/`, null, {
                 headers: {
                     Authorization: `Bearer ${cookies.authToken}`,
                 },
