@@ -8,6 +8,7 @@ import { TbTruckDelivery  } from "react-icons/tb";
 import { BiCartAlt  } from "react-icons/bi";
 import { useCookies } from 'react-cookie';
 import { useRouter } from "next/navigation";
+import apiConfig from '../../../config/apiConfig';
 
 const page = () => {
     const [cookies] = useCookies(['authToken', 'cartId']);
@@ -17,7 +18,7 @@ const page = () => {
     const router = useRouter();
       const fetchCartData = async () => {
         try {
-          const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/`);
+          const response = await axios.get(`${apiConfig.apiUrl}/api/carts/${cartId}/`);
           setCartData(response.data);
         } catch (error) {
           console.error('Error fetching cart data:', error);
@@ -49,7 +50,7 @@ const page = () => {
     const handleQuantityChange = async (itemId, newQuantity) => {
         try {
           // Make a PATCH request to update the quantity
-          await axios.patch(`https://kirolosadel5.pythonanywhere.com/api/carts/${cartData.id}/items/${itemId}/`, {
+          await axios.patch(`${apiConfig.apiUrl}/api/carts/${cartData.id}/items/${itemId}/`, {
             quantity: newQuantity,
           });
       
@@ -67,7 +68,7 @@ const page = () => {
         try {
               // Make the API call to delete the address
               const response = await axios.delete(
-                `https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/items/${addressId}/`,
+                `${apiConfig.apiUrl}/api/carts/${cartId}/items/${addressId}/`,
                 {
                   headers: {
                     Authorization: `Bearer ${cookies.authToken}`,
@@ -102,7 +103,7 @@ const page = () => {
                   try {
                     // Fetch the addresses
                     const addressesResponse = await axios.get(
-                      'https://kirolosadel5.pythonanywhere.com/api/addresses/',
+                      `${apiConfig.apiUrl}/api/addresses/`,
                       {
                         headers: {
                           Authorization: `Bearer ${cookies.authToken}`,
@@ -125,7 +126,7 @@ const page = () => {
                 
                     // Make the API call to create the order using the default address
                     const response = await axios.post(
-                      'https://kirolosadel5.pythonanywhere.com/api/orders/',
+                      `${apiConfig.apiUrl}/api/orders/`,
                       {
                         cart_id: cartId,
                         address_id: defaultAddress.id,

@@ -7,6 +7,8 @@ import styles from "./page.module.css";
 import { useRouter ,useSearchParams} from "next/navigation";
 import { BiSearch } from "react-icons/bi";
 import Link from "next/link";
+import apiConfig from '../../../config/apiConfig';
+
 
 const YourPageComponent = () => {
   const searchParams = useSearchParams()
@@ -19,13 +21,13 @@ const YourPageComponent = () => {
     try {
 
       if(!category){
-        const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/?search=${q}`);
+        const response = await axios.get(`${apiConfig.apiUrl}/api/products/?search=${q}`);
         setProducts(response.data.results);
         return
       }
 
       else{
-        const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/?search=${q}&category=${category}`);
+        const response = await axios.get(`${apiConfig.apiUrl}/api/products/?search=${q}&category=${category}`);
         setProducts(response.data.results);
         return
       }

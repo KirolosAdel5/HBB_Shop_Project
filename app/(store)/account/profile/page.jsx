@@ -6,6 +6,7 @@ import { useCookies } from 'react-cookie';
 import { useRouter } from "next/navigation";
 
 import classes from "./page.module.css";
+import apiConfig from '../../../../config/apiConfig';
 
 const page = () => {
     const [cookies] = useCookies(['authToken']);
@@ -23,7 +24,7 @@ const page = () => {
           }
     
           try {
-            const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/users/me/', {
+            const response = await axios.get(`${apiConfig.apiUrl}/api/users/me/`, {
               headers: {
                 Authorization: `Bearer ${cookies.authToken}`,
               },

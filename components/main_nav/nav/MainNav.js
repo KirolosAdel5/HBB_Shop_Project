@@ -6,6 +6,8 @@ import { PiShoppingBagFill } from "react-icons/pi";
 import Link from "next/link";
 import { useRouter ,useSearchParams} from "next/navigation";
 import { useCookies } from 'react-cookie';
+import apiConfig from "@/config/apiConfig";
+
 
 const MainNav = (props) => {
     const [showComponent, setShowComponent] = useState(false);
@@ -37,7 +39,7 @@ const MainNav = (props) => {
                         'Authorization': 'Bearer '+authToken,
                     };
                     
-                    const response = await axios.post("https://kirolosadel5.pythonanywhere.com/api/logout/", {}, { headers });
+                    const response = await axios.post(`${apiConfig.apiUrl}/api/logout/`, {}, { headers });
             
                     if (response.status === 200) {
                         removeCookie('authToken'); // Replace 'authToken' with the actual cookie name
@@ -60,7 +62,7 @@ const MainNav = (props) => {
                       setSearchTerm(q);
                     }
                   try {
-                    const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/users/me/', {
+                    const response = await axios.get(`${apiConfig.apiUrl}/api/users/me/`, {
                       headers: {
                         Authorization: `Bearer ${cookies.authToken}`,
                       },
@@ -76,7 +78,7 @@ const MainNav = (props) => {
                 const fetchCart = async () => {
                     try {
                       const response = await axios.post(
-                        "https://kirolosadel5.pythonanywhere.com/api/carts/",
+                        `${apiConfig.apiUrl}/api/carts/`,
                         {},
                         {
                           headers: {

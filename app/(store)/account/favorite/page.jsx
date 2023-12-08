@@ -5,6 +5,7 @@ import classes from "./page.module.css";
 import { useCookies } from 'react-cookie';
 import Link from "next/link";
 import ButtonAddToCart from "../../../../components/UI/button/ButtonAddToCart";
+import apiConfig from '../../../../config/apiConfig';
 
 const Page = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -16,7 +17,7 @@ const Page = () => {
   const isAuthenticated = !!cookies.authToken;
       const fetchWishlist = async () => {
       try {
-        const response = await axios.get("https://kirolosadel5.pythonanywhere.com/api/wishlist/", {
+        const response = await axios.get(`${apiConfig.apiUrl}/api/wishlist/`, {
           headers: {
             Authorization: `Bearer ${cookies.authToken}`
           }
@@ -43,7 +44,7 @@ const Page = () => {
     try {
 
         // Make the DELETE API call to remove the product from the wishlist
-        const response = await axios.post(`https://kirolosadel5.pythonanywhere.com/api/wishlist/add_to_wishlist/${productId}/`, null, {
+        const response = await axios.post(`${apiConfig.apiUrl}/api/wishlist/add_to_wishlist/${productId}/`, null, {
           headers: {
                 Authorization: `Bearer ${cookies.authToken}`,
             },

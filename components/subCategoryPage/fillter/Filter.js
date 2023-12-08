@@ -4,6 +4,7 @@ import axios from "axios";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import classes from "./Filter.module.css";
 import ButtonAddToCart from "@/components/UI/button/ButtonAddToCart";
+import apiConfig from "@/config/apiConfig";
 
 const Filter = ({ onFilter }) => {
     // const { categoryName } = props;
@@ -21,7 +22,7 @@ const Filter = ({ onFilter }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/brands/`);
+                const response = await axios.get(`${apiConfig.apiUrl}/api/products/brands/`);
                 setBrands(response.data);
             } catch (error) {
                 console.error("Error fetching product data:", error.message);
@@ -67,7 +68,7 @@ const Filter = ({ onFilter }) => {
     // -------------------------
     const handleConfirmationClick = () => {
         // // Make API call with selected filters and the categoryName from the URL
-        // const apiUrl = `https://kirolosadel5.pythonanywhere.com/api/products/?category=${categoryName}&brand=${selectedBrand}&price_min=${priceFrom}&price_max=${priceTo}`;
+        // const apiUrl = `${apiConfig.apiUrl}/api/products/?category=${categoryName}&brand=${selectedBrand}&price_min=${priceFrom}&price_max=${priceTo}`;
 
         // axios.get(apiUrl)
         //     .then((response) => {

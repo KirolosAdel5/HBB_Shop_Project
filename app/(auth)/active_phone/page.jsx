@@ -6,6 +6,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios"; // Import Axios
 
 import {useRouter,useSearchParams} from "next/navigation";
+import apiConfig from '../../../config/apiConfig';
+
 const page = () => {
     const  router =useRouter()
     const searchParams  =  useSearchParams();
@@ -33,7 +35,7 @@ const page = () => {
 
         try {
           const response = await axios.post(
-            `http://127.0.0.1:8000/api/register/verify-otp/${user_id}/`,
+            `${apiConfig.apiUrl}/api/register/verify-otp/${user_id}/`,
             { otp: otp }
           );
     
@@ -59,7 +61,7 @@ const page = () => {
 
         try {
           const response = await axios.post(
-            'http://127.0.0.1:8000/api/resend-otp/',
+            `${apiConfig.apiUrl}/api/resend-otp/`,
             { user_id : user_id,}
           );
     

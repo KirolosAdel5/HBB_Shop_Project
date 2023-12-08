@@ -6,6 +6,7 @@ import { BsBoxSeam } from "react-icons/bs";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/navigation";
+import apiConfig from '../../../../config/apiConfig';
 
 const page = () => {
     const [cookies] = useCookies(['authToken', 'cartId']);
@@ -21,7 +22,7 @@ const page = () => {
       const fetchData = async () => {
         try {
         if (authToken){
-            const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/orders/'
+            const response = await axios.get(`${apiConfig.apiUrl}/api/orders/`
             , {
                 headers: {
                     Authorization: `Bearer ${authToken}`,

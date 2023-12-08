@@ -10,6 +10,8 @@ import { usePathname } from "next/navigation";
 import { FaBabyCarriage, FaCartShopping } from "react-icons/fa6";
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
+import apiConfig from "@/config/apiConfig";
+
 
 const Aside = (props) => {
     const pathname = usePathname();
@@ -25,7 +27,7 @@ const Aside = (props) => {
                         'Authorization': 'Bearer '+authToken,
                     };
                     
-                    const response = await axios.post("https://kirolosadel5.pythonanywhere.com/api/logout/", {}, { headers });
+                    const response = await axios.post(`${apiConfig.apiUrl}/api/logout/`, {}, { headers });
             
                     if (response.status === 200) {
                         removeCookie('authToken'); // Replace 'authToken' with the actual cookie name

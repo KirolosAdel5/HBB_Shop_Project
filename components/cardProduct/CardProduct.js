@@ -6,6 +6,8 @@ import { MdOutlineBookmark, MdOutlineBookmarkAdded } from 'react-icons/md';
 import { useRouter } from "next/navigation";
 import { useCookies } from 'react-cookie';
 import Link from "next/link";
+import apiConfig from "@/config/apiConfig";
+
 const CardProduct = ({ productId }) => {
     const [cookies] = useCookies(['authToken']);
     const router = useRouter();
@@ -27,7 +29,7 @@ const CardProduct = ({ productId }) => {
               }
   
               // Make the API call with the headers
-              const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/${productId}/`, {
+              const response = await axios.get(`${apiConfig.apiUrl}/api/products/${productId}/`, {
                   headers: headers,
               });
   
@@ -62,7 +64,7 @@ const CardProduct = ({ productId }) => {
             }
 
             // Make the API call to add the product to the wishlist
-            const response = await axios.post(`https://kirolosadel5.pythonanywhere.com/api/wishlist/add_to_wishlist/${productId}/`, null, {
+            const response = await axios.post(`${apiConfig.apiUrl}/api/wishlist/add_to_wishlist/${productId}/`, null, {
                 headers: {
                     Authorization: `Bearer ${cookies.authToken}`,
                 },

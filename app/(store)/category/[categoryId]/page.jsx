@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import classes from "./page.module.css";
 import Link from "next/link";
+import apiConfig from '../../../../config/apiConfig';
 
 const page = ({params}) => {
     const [categoryName, setcategoryName] = useState([]);
@@ -13,7 +14,7 @@ const page = ({params}) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/${params.categoryId}/`);
+          const response = await axios.get(`${apiConfig.apiUrl}/api/categories/${params.categoryId}/`);
           setcategoryName(response.data.name);
           setCategories(response.data.children);
           setCategoryImages(response.data.category_images);
@@ -37,7 +38,7 @@ const page = ({params}) => {
           <Link href={`/subCategory/${category.slug}`}>
             {category.category_images.length > 0 ? (
               <img 
-              src={`https://kirolosadel5.pythonanywhere.com${category.category_images[0].image}`} 
+              src={`${apiConfig.apiUrl}${category.category_images[0].image}`} 
               alt={category.name} 
               
               />

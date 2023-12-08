@@ -7,6 +7,7 @@ import Link from "next/link";
 import { PiMapPinLineThin,PiXSquareBold   } from "react-icons/pi";
 import { useCookies } from 'react-cookie';
 import { useRouter } from "next/navigation";
+import apiConfig from '../../../../config/apiConfig';
 
 
 const Page = () => {
@@ -15,7 +16,7 @@ const Page = () => {
   const router = useRouter(); // Initialize the useRouter hook
 const fetchData = async () => {
       try {
-        const response = await fetch("https://kirolosadel5.pythonanywhere.com/api/addresses/", {
+        const response = await fetch(`${apiConfig.apiUrl}/api/addresses/`, {
           headers: {
             Authorization: `Bearer ${cookies.authToken}`,
           },
@@ -56,7 +57,7 @@ const fetchData = async () => {
     try {
           // Make the API call to delete the address
           const response = await axios.delete(
-            `https://kirolosadel5.pythonanywhere.com/api/addresses/${addressId}/`,
+            `${apiConfig.apiUrl}/api/addresses/${addressId}/`,
             {
               headers: {
                 Authorization: `Bearer ${cookies.authToken}`,
@@ -77,7 +78,7 @@ const fetchData = async () => {
     try {
       // Make the API call to set the address as default
       const response = await axios.patch(
-        `https://kirolosadel5.pythonanywhere.com/api/addresses/${addressId}/set_default/`,
+        `${apiConfig.apiUrl}/api/addresses/${addressId}/set_default/`,
         {},
         {
           headers: {

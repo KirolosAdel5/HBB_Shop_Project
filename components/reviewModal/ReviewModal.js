@@ -8,6 +8,7 @@ import styles from './ReviewModal.module.css';
 import axios from "axios";
 import { useCookies } from 'react-cookie';
 import { useRouter } from "next/navigation";
+import apiConfig from "@/config/apiConfig";
 
 const ReviewModal = ({ isOpen, onClose ,product_slug,category_slug}) => {
   const [rating, setRating] = useState(0);
@@ -42,7 +43,7 @@ const ReviewModal = ({ isOpen, onClose ,product_slug,category_slug}) => {
       
       if (authToken){
         const response = await axios.post(
-          `https://kirolosadel5.pythonanywhere.com/api/products/${product_slug}/review/`,
+          `${apiConfig.apiUrl}/api/products/${product_slug}/review/`,
           {
             rating: rating,
             comment: reviewText,

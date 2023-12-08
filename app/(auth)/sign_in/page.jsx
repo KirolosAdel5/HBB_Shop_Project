@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useRouter ,useSearchParams } from "next/navigation";
 
 import { useCookies } from 'react-cookie';
+import apiConfig from '../../../config/apiConfig';
 
 // Function to check if the user is authenticated
 
@@ -36,7 +37,7 @@ const Login = () => {
   
       try {
 
-        const tokenResponse = await axios.post('https://kirolosadel5.pythonanywhere.com/api/token/', form);
+        const tokenResponse = await axios.post(`${apiConfig.apiUrl}/api/token/`, form);
         if (tokenResponse.status === 200) {
             const authToken = tokenResponse.data.access; 
 
@@ -50,7 +51,7 @@ const Login = () => {
               const headers = {
                 'Authorization': `Bearer ${authToken}`, // Set the Bearer Token in the header
               };
-              const loginResponse = await axios.post('https://kirolosadel5.pythonanywhere.com/api/login/', loginData, { headers });
+              const loginResponse = await axios.post(`${apiConfig.apiUrl}/api/login/`, loginData, { headers });
               if (loginResponse.status === 200) {
                 setCookie('authToken', authToken, { path: '/', maxAge: 3600 }); // Replace 'authToken' with your token and set an expiration time
 
@@ -66,7 +67,7 @@ const Login = () => {
               }
 
         }
-        // const res = await axios.post('https://kirolosadel5.pythonanywhere.com/api/login/', form); // Make a POST request to the login endpoint
+        // const res = await axios.post('${apiConfig.apiUrl}/api/login/', form); // Make a POST request to the login endpoint
   
         // if (res.status === 200) {
   

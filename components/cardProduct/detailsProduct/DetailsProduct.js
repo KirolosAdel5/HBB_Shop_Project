@@ -13,6 +13,7 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { FaStar } from 'react-icons/fa';
 import ReviewModal from '../../reviewModal/ReviewModal';
+import apiConfig from "@/config/apiConfig";
 
 const DetailsProduct = (props) => {
     const { product_slug } = props;
@@ -37,7 +38,7 @@ const DetailsProduct = (props) => {
             // Define the headers object    
 
             // Make the API call with the headers
-            const response = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/products/${product_slug}/`);
+            const response = await axios.get(`${apiConfig.apiUrl}/api/products/${product_slug}/`);
 
             setProductData(response.data);
             setCategorySlug(response.data.category.slug);
@@ -78,7 +79,7 @@ const DetailsProduct = (props) => {
               return
             }
             const response = await axios.post(
-              `https://kirolosadel5.pythonanywhere.com/api/carts/${cartId}/items/`,
+              `${apiConfig.apiUrl}/api/carts/${cartId}/items/`,
               {
                 product_id: productId,
                 color: selectedColor,

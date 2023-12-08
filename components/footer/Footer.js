@@ -5,6 +5,8 @@ import classes from "./Footer.module.css";
 import { BsInstagram, BsTelephone, BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import Link from "next/link";
+import apiConfig from "@/config/apiConfig";
+
 
 const Footer = () => {
     const [menCategories, setMenCategories] = useState([]);
@@ -13,11 +15,11 @@ const Footer = () => {
     
     const fetchData = async () => {
       try {
-        const menCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/men/`);
+        const menCategories = await axios.get(`${apiConfig.apiUrl}/api/categories/men/`);
         setMenCategories(menCategories.data.children);
-        const womenCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/women/`);
+        const womenCategories = await axios.get(`${apiConfig.apiUrl}/api/categories/women/`);
         setWomenCategories(womenCategories.data.children);
-        const kidsCategories = await axios.get(`https://kirolosadel5.pythonanywhere.com/api/categories/kids/`);
+        const kidsCategories = await axios.get(`${apiConfig.apiUrl}/api/categories/kids/`);
         setKidsCategories(kidsCategories.data.children);
 
       } catch (error) {

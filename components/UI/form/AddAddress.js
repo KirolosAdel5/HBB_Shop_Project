@@ -5,7 +5,7 @@ import classes from "./AddAddress.module.css";
 import axios from "axios"; // Import Axios for making HTTP requests
 import { useCookies } from 'react-cookie';
 import { useRouter } from "next/navigation";
-
+import apiConfig from "@/config/apiConfig";
 const AddAddress = () => {
     const [cookies] = useCookies(['authToken']);
     const router = useRouter(); // Initialize the useRouter hook
@@ -41,7 +41,7 @@ const AddAddress = () => {
     try {
       // Make a POST request to your API endpoint with form data and auth token
       const response = await axios.post(
-        "https://kirolosadel5.pythonanywhere.com/api/addresses/",
+        `${apiConfig.apiUrl}/api/addresses/`,
         formData,
         {
           headers: {

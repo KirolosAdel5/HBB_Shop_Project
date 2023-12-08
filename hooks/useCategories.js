@@ -1,9 +1,10 @@
 // hooks/useCategories.js
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import apiConfig from "../config/apiConfig"
 
 const fetchCategories = async () => {
-  const response = await axios.get('https://kirolosadel5.pythonanywhere.com/api/categories/men/');
+  const response = await axios.get(`${apiConfig.apiUrl}/api/categories/men/`);
   return response.data.children;
 };
 

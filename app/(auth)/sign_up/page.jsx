@@ -6,6 +6,7 @@ import axios from "axios";
 // import Loading from "@/components/loading/Loading";
 import { useRouter } from "next/navigation";
 import { useCookies } from 'react-cookie';
+import apiConfig from '../../../config/apiConfig';
 
 const Register = () => {
     const router = useRouter();
@@ -46,7 +47,7 @@ const Register = () => {
         try {
             // Make a POST request to the Django API for registration
             const response = await axios.post(
-                'https://kirolosadel5.pythonanywhere.com/api/register/', 
+                `${apiConfig.apiUrl}/api/register/`, 
                 {
                     ...form,
                     phone_number: combinedValue, // Update phone_number
