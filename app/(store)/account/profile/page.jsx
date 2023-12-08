@@ -19,7 +19,7 @@ const page = () => {
           // Check if authToken is not available
           if (!cookies.authToken) {
             // Redirect to login page
-            router.push('/login'); // Replace '/login' with your actual login page route
+            router.push('/sign_in'); // Replace '/login' with your actual login page route
             return;
           }
     
