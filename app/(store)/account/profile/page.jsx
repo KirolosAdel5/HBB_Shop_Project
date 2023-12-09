@@ -12,7 +12,35 @@ const page = () => {
     const [cookies] = useCookies(['authToken']);
     const router = useRouter();
 
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState({
+      first_name: '',
+      last_name: '',
+      phone_number: '',
+  });
+
+  const handleUpdate = async () => {
+    try {
+        const response = await axios.patch(
+            `${apiConfig.apiUrl}/api/users/me/`,
+            {
+                first_name: userData.first_name,
+                last_name: userData.last_name,
+                phone_number: userData.phone_number,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${cookies.authToken}`,
+                },
+            }
+        );
+        console.log('User data updated successfully:', response.data);
+        // Optionally, you can update the state with the new data
+        setUserData(response.data);
+    } catch (error) {
+        console.error('Error updating user data:', error.message);
+    }
+};
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,29 +75,21 @@ const page = () => {
             <form action="" className={classes.form}>
                 
             <div className={`${classes["input-group"]} mt-8 flex`}>
-            <label htmlFor="fname">الاسم الاول</label>
-            <input type="text" name="fname" id="fname" className="w-full" value={userData.first_name} />
+            <label htmlFor="first_name">الاسم الاول</label>
+            <input type="text" name="first_name" id="first_name" className="w-full" value={userData.first_name} />
           </div>
           <div className={`${classes["input-group"]} mt-8`}>
-            <label htmlFor="lname">الاسم الثاني</label>
-            <input type="text" name="lname" id="lname" className="w-full" value={userData.last_name} />
+            <label htmlFor="last_name">الاسم الثاني</label>
+            <input type="text" name="last_name" id="last_name" className="w-full" value={userData.last_name} />
           </div>                    
                 <div className={`${classes["input-group"]} mt-8 `}>
-                    <label htmlFor="">رقم الهاتف</label>
-                    <input type="text" name="" id="" className="w-full" value={userData.phone_number}/>
+                    <label htmlFor="phone_number">رقم الهاتف</label>
+                    <input type="text" name="phone_number" id="phone_number" className="w-full" value={userData.phone_number}/>
                 </div>
                 
                 <div>
                 </div>
-                <div>
-                    <label htmlFor="">كلمه السر القديمه</label>
-                    <input type="text" name="" id="" className="w-full"/>
-                </div>
-                <div>
-                    <label htmlFor="">كلمه السر الجديده</label>
-                    <input type="text" name="" id="" className="w-full"/>
-                </div>
-                <button>تحديث بيانات المستخدم</button>
+                <button onClick={handleUpdate}>تحديث بيانات المستخدم</button>
             </form>
         </>
     );
